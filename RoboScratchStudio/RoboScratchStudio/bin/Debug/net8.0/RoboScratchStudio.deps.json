@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "RoboScratchStudio/1.0.0": {
+        "runtime": {
+          "RoboScratchStudio.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RoboScratchStudio/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
