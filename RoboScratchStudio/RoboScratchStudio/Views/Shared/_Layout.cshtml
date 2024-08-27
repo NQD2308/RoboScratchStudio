@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - RoboScratchStudio</title>
     <link rel="stylesheet" href="~/css/output.css" />
+    <link rel="stylesheet" href="~/css/carousel.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="~/js/carousel.js" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     @* <link rel="stylesheet" href="~/RoboScratchStudio.styles.css" asp-append-version="true" /> *@
 </head>
@@ -109,7 +111,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <a href="#" class="text-lg font-semibold text-gray-600 transition duration-100 hover:text-orange-500 active:text-orange-700">Pricing</a>
                     <a href="#" class="text-lg font-semibold text-gray-600 transition duration-100 hover:text-orange-500 active:text-orange-700">About</a>
                 </nav>
@@ -131,158 +133,212 @@
                 <!-- buttons - end -->
             </header>
         </div>
+        <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+                    <div class="carousel-item">
+                        <img src="http://fakeimg.pl/2000x800/0079D8/fff/?text=Robot">
+                    </div>
+                    <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+                    <div class="carousel-item">
+                        <img src="http://fakeimg.pl/2000x800/DA5930/fff/?text=Scratch">
+                    </div>
+                    <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+                    <div class="carousel-item">
+                        <img src="http://fakeimg.pl/2000x800/F90/fff/?text=Studio">
+                    </div>
+                    <label for="carousel-3" class="carousel-control prev control-1">‹</label>
+                    <label for="carousel-2" class="carousel-control next control-1">›</label>
+                    <label for="carousel-1" class="carousel-control prev control-2">‹</label>
+                    <label for="carousel-3" class="carousel-control next control-2">›</label>
+                    <label for="carousel-2" class="carousel-control prev control-3">‹</label>
+                    <label for="carousel-1" class="carousel-control next control-3">›</label>
+                    <ol class="carousel-indicators">
+                        <li>
+                            <label for="carousel-1" class="carousel-bullet">•</label>
+                        </li>
+                        <li>
+                            <label for="carousel-2" class="carousel-bullet">•</label>
+                        </li>
+                        <li>
+                            <label for="carousel-3" class="carousel-bullet">•</label>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div class="bg-white lg:pb-12">
+        <main role="main" class="mx-auto max-w-screen-2xl px-4 md:px-8">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="relative bg-orange-400">
-        <img class="absolute top-4 right-[620px] h-auto w-32" src="~/assets/images/helicopter.png"/>
-        <img class="absolute bottom-24 left-12 h-auto w-32" src="~/assets/images/giro.png" />
-        <img class="absolute bottom-24 right-24 h-auto w-24" src="~/assets/images/cat.png" />
-        <div class="pb-16 pt-4 sm:pt-10 lg:pt-12">
-            <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-                <div class="grid grid-cols-2 gap-12 border-t pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
-                    <div class="col-span-full lg:col-span-2">
-                        <!-- logo - start -->
-                        <div class="mb-4 lg:-mt-2">
-                            <a href="/" class="inline-flex items-center gap-2 text-xl font-bold text-black md:text-2xl" aria-label="logo">
-                                <svg width="95" height="94" viewBox="0 0 95 94" class="h-auto w-5 text-orange-500" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M96 0V47L48 94H0V47L48 0H96Z" />
-                                </svg>
 
-                                RoboScratch <span>Studio</span>
-                            </a>
+    <div class="bg-white lg:pb-12">
+        <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+            <footer class="relative bg-orange-400">
+                <img class="absolute top-4 right-[620px] h-auto w-32 -rotate-12" src="~/assets/images/helicopter.png" />
+                <img class="absolute bottom-24 left-12 h-auto w-32" src="~/assets/images/giro.png" />
+                <img class="absolute bottom-24 right-24 h-auto w-24" src="~/assets/images/cat.png" />
+                <div class="pb-16 pt-4 sm:pt-10 lg:pt-12">
+                    <div class="relative mx-auto max-w-screen-2xl px-4 md:px-8">
+                        <div class="grid grid-cols-2 gap-12 border-t pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
+                            <div class="col-span-full lg:col-span-2">
+                                <!-- logo - start -->
+                                <div class="mb-4 lg:-mt-2">
+                                    <a href="/" class="inline-flex items-center gap-2 text-xl font-bold text-black md:text-2xl" aria-label="logo">
+                                        <svg width="95" height="94" viewBox="0 0 95 94" class="h-auto w-5 text-orange-500" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M96 0V47L48 94H0V47L48 0H96Z" />
+                                        </svg>
+
+                                        RoboScratch <span>Studio</span>
+                                    </a>
+                                </div>
+                                <!-- logo - end -->
+
+                                <p class="text-white sm:pr-8">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+                            </div>
+
+                            <!-- nav - start -->
+                            <div>
+                                <div class="mb-4 font-bold text-white uppercase tracking-widest text-blue-800">Products</div>
+
+                                <nav class="flex flex-col gap-4">
+                                    <div>
+                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Overview</a>
+                                    </div>
+
+                                    <div>
+                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Solutions</a>
+                                    </div>
+
+                                    <div>
+                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Pricing</a>
+                                    </div>
+
+                                    <div>
+                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Customers</a>
+                                    </div>
+                                </nav>
+                            </div>
+                            <!-- nav - end -->
+                            <!-- nav - start -->
+                            <div>
+                                <div class="mb-4 font-bold text-white uppercase tracking-widest text-blue-800">Company</div>
+
+                                <nav class="flex flex-col gap-4">
+                                    <div>
+                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">About</a>
+                                    </div>
+
+                                    <div>
+                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Investor Relations</a>
+                                    </div>
+
+                                    <div>
+                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Jobs</a>
+                                    </div>
+
+                                    <div>
+                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Press</a>
+                                    </div>
+
+                                    <div>
+                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Blog</a>
+                                    </div>
+                                </nav>
+                            </div>
+                            <!-- nav - end -->
+                            <!-- nav - start -->
+                            <div>
+                                <div class="mb-4 font-bold text-white uppercase tracking-widest text-blue-800">Support</div>
+
+                                <nav class="flex flex-col gap-4">
+                                    <div>
+                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">Contact</a>
+                                    </div>
+
+                                    <div>
+                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">Documentation</a>
+                                    </div>
+
+                                    <div>
+                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">Chat</a>
+                                    </div>
+
+                                    <div>
+                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">FAQ</a>
+                                    </div>
+                                </nav>
+                            </div>
+                            <!-- nav - end -->
+                            <!-- nav - start -->
+                            <div>
+                                <div class="mb-4 font-bold text-white uppercase tracking-widest text-blue-800">Legal</div>
+
+                                <nav class="flex flex-col gap-4">
+                                    <div>
+                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">Terms of Service</a>
+                                    </div>
+
+                                    <div>
+                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">Privacy Policy</a>
+                                    </div>
+
+                                    <div>
+                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">Cookie settings</a>
+                                    </div>
+                                </nav>
+                            </div>
+                            <!-- nav - end -->
                         </div>
-                        <!-- logo - end -->
-
-                        <p class="text-white sm:pr-8">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
                     </div>
-
-                    <!-- nav - start -->
-                    <div>
-                        <div class="mb-4 font-bold text-white uppercase tracking-widest text-blue-800">Products</div>
-
-                        <nav class="flex flex-col gap-4">
-                            <div>
-                                <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Overview</a>
-                            </div>
-
-                            <div>
-                                <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Solutions</a>
-                            </div>
-
-                            <div>
-                                <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Pricing</a>
-                            </div>
-
-                            <div>
-                                <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Customers</a>
-                            </div>
-                        </nav>
-                    </div>
-                    <!-- nav - end -->
-                    <!-- nav - start -->
-                    <div>
-                        <div class="mb-4 font-bold text-white uppercase tracking-widest text-blue-800">Company</div>
-
-                        <nav class="flex flex-col gap-4">
-                            <div>
-                                <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">About</a>
-                            </div>
-
-                            <div>
-                                <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Investor Relations</a>
-                            </div>
-
-                            <div>
-                                <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Jobs</a>
-                            </div>
-
-                            <div>
-                                <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Press</a>
-                            </div>
-
-                            <div>
-                                <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Blog</a>
-                            </div>
-                        </nav>
-                    </div>
-                    <!-- nav - end -->
-                    <!-- nav - start -->
-                    <div>
-                        <div class="mb-4 font-bold text-white uppercase tracking-widest text-blue-800">Support</div>
-
-                        <nav class="flex flex-col gap-4">
-                            <div>
-                                <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">Contact</a>
-                            </div>
-
-                            <div>
-                                <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">Documentation</a>
-                            </div>
-
-                            <div>
-                                <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">Chat</a>
-                            </div>
-
-                            <div>
-                                <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">FAQ</a>
-                            </div>
-                        </nav>
-                    </div>
-                    <!-- nav - end -->
-                    <!-- nav - start -->
-                    <div>
-                        <div class="mb-4 font-bold text-white uppercase tracking-widest text-blue-800">Legal</div>
-
-                        <nav class="flex flex-col gap-4">
-                            <div>
-                                <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">Terms of Service</a>
-                            </div>
-
-                            <div>
-                                <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">Privacy Policy</a>
-                            </div>
-
-                            <div>
-                                <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">Cookie settings</a>
-                            </div>
-                        </nav>
-                    </div>
-                    <!-- nav - end -->
                 </div>
-            </div>
-        </div>
 
-        <div class="bg-gray-100">
-            <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-                <div class="flex items-center justify-between gap-4 py-8">
-                    <span class="text-sm text-gray-400"> © 2024 - Present RoboScratch Studio. All rights reserved. </span>
+                <div class="bg-gray-100">
+                    <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+                        <div class="flex items-center justify-between gap-4 py-8">
+                            <span class="text-sm text-gray-400"> © 2024 - Present RoboScratch Studio. All rights reserved. </span>
 
-                    <!-- social - start -->
-                    <div class="flex gap-4 items-center">
-                        <a href="https://www.facebook.com/profile.php?id=61564470252926" target="_blank" class="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600">
-                            <i class="fa-brands fa-square-facebook text-xl"></i>
-                        </a>
+                            <!-- social - start -->
+                            <div class="flex gap-4 items-center">
+                                <a href="https://www.facebook.com/profile.php?id=61564470252926" target="_blank" class="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600">
+                                    <i class="fa-brands fa-square-facebook text-xl"></i>
+                                </a>
 
-                        <a href="#" target="_blank" class="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600">
-                            <i class="fa-brands fa-youtube text-xl"></i>
-                        </a>
+                                <a href="#" target="_blank" class="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600">
+                                    <i class="fa-brands fa-youtube text-xl"></i>
+                                </a>
 
-                        
+
+                            </div>
+                            <!-- social - end -->
+                        </div>
                     </div>
-                    <!-- social - end -->
                 </div>
-            </div>
+            </footer>
         </div>
-    </footer>
-    
+    </div>
+
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+<script>
+    let currentSlide = 1;
+    const totalSlides = 3;
+
+    function showNextSlide() {
+        document.getElementById('carousel-' + currentSlide).checked = false;
+        currentSlide = currentSlide % totalSlides + 1;
+        document.getElementById('carousel-' + currentSlide).checked = true;
+    }
+
+    setInterval(showNextSlide, 5000);
+</script>
 <style>
     .dropdown:focus-within .dropdown-menu {
         display: block;
