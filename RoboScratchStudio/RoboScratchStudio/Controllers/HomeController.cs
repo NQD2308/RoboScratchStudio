@@ -17,6 +17,14 @@ namespace RoboScratchStudio.Controllers
         {
             return View();
         }
+        public IActionResult Pricing()
+        {
+            return View();
+        }
+        public IActionResult Contact()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {
