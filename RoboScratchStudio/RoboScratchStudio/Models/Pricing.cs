@@ -9,8 +9,6 @@ public partial class Pricing
 
     public string? PricingText { get; set; }
 
-    public string? Name { get; set; }
-
     public string? Subtext { get; set; }
 
     public string? Currency { get; set; }

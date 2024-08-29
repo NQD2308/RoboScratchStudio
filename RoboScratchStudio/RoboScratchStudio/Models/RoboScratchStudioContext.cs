@@ -131,9 +131,6 @@ public partial class RoboScratchStudioContext : DbContext
             entity.Property(e => e.IdCategory).HasColumnName("id_category");
             entity.Property(e => e.IdCourse).HasColumnName("id_course");
             entity.Property(e => e.IdPricingCategory).HasColumnName("id_pricing_category");
-            entity.Property(e => e.Name)
-                .HasMaxLength(50)
-                .HasColumnName("name");
             entity.Property(e => e.Price)
                 .HasColumnType("money")
                 .HasColumnName("price");
