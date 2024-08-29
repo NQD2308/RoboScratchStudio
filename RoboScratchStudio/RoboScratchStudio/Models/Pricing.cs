@@ -25,9 +25,13 @@ public partial class Pricing
 
     public int? IdCourse { get; set; }
 
+    public int? IdPricingCategory { get; set; }
+
     public virtual CourseCategory? IdCategoryNavigation { get; set; }
 
     public virtual Course? IdCourseNavigation { get; set; }
+
+    public virtual PricingCategory? IdPricingCategoryNavigation { get; set; }
 
     public virtual ICollection<Benefit> IdBenefits { get; set; } = new List<Benefit>();
 }

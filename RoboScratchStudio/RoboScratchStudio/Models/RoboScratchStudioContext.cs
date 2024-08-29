@@ -27,6 +27,8 @@ public partial class RoboScratchStudioContext : DbContext
 
     public virtual DbSet<Pricing> Pricings { get; set; }
 
+    public virtual DbSet<PricingCategory> PricingCategories { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Server=ADMIN-GK4O6HCO7\\SQLEXPRESS;uid=sa;password=1;database=RoboScratchStudio;Encrypt=true;TrustServerCertificate=true");
@@ -128,6 +130,7 @@ public partial class RoboScratchStudioContext : DbContext
                 .HasColumnName("duration_course");
             entity.Property(e => e.IdCategory).HasColumnName("id_category");
             entity.Property(e => e.IdCourse).HasColumnName("id_course");
+            entity.Property(e => e.IdPricingCategory).HasColumnName("id_pricing_category");
             entity.Property(e => e.Name)
                 .HasMaxLength(50)
                 .HasColumnName("name");
@@ -152,6 +155,10 @@ public partial class RoboScratchStudioContext : DbContext
                 .HasForeignKey(d => d.IdCourse)
                 .HasConstraintName("FK_Pricing_Courses1");
 
+            entity.HasOne(d => d.IdPricingCategoryNavigation).WithMany(p => p.Pricings)
+                .HasForeignKey(d => d.IdPricingCategory)
+                .HasConstraintName("FK_Pricing_Pricing_Categories");
+
             entity.HasMany(d => d.IdBenefits).WithMany(p => p.IdPricings)
                 .UsingEntity<Dictionary<string, object>>(
                     "PricingBenefit",
@@ -170,6 +177,16 @@ public partial class RoboScratchStudioContext : DbContext
                         j.IndexerProperty<int>("IdPricing").HasColumnName("id_pricing");
                         j.IndexerProperty<int>("IdBenefit").HasColumnName("id_benefit");
                     });
+        });
+
+        modelBuilder.Entity<PricingCategory>(entity =>
+        {
+            entity.ToTable("Pricing_Categories");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Name)
+                .HasMaxLength(50)
+                .HasColumnName("name");
         });
 
         OnModelCreatingPartial(modelBuilder);
