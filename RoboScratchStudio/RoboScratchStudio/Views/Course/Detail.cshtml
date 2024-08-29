@@ -1,8 +1,10 @@
-﻿@{
+﻿@model RoboScratchStudio.Models.Course
+
+@{
     Layout = "~/Views/Shared/_Layout_no_carousel.cshtml";
 }
 
-<h2 class=" flex items-center mb-4 px-4 mt-4 text-base text-white bg-orange-400 py-2 md:mb-8 lg:text-xl xl:mb-12">Home <i class="fa-solid fa-chevron-right px-2"></i> Wedo Rbo scratch</h2>
+<h2 class=" flex items-center mb-4 px-4 mt-4 text-base text-white bg-orange-400 py-2 md:mb-8 lg:text-xl xl:mb-12">Home <i class="fa-solid fa-chevron-right px-2"></i> @Model.Name</h2>
 
 @* Detail *@
 <div class="grid gap-8 mb-4 md:grid-cols-2 md:mb-8">

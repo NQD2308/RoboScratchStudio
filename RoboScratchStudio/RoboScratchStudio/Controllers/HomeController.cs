@@ -1,21 +1,30 @@
 using Microsoft.AspNetCore.Mvc;
 using RoboScratchStudio.Models;
+using RoboScratchStudio.Repositories;
 using System.Diagnostics;
 
 namespace RoboScratchStudio.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private RoboScratchStudioContext _ctx;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ILogger<HomeController> _logger;
+        private IHomeRepository _homeRepository;
+
+        public HomeController(ILogger<HomeController> logger,
+                                RoboScratchStudioContext ctx,
+                                IHomeRepository homeRepository)
         {
             _logger = logger;
+            _ctx = ctx;
+            _homeRepository = homeRepository;
         }
 
         public IActionResult Index()
         {
-            return View();
+            List<Course> courses = _homeRepository.GetAllcourses();
+            return View(courses);
         }
         public IActionResult Pricing()
         {

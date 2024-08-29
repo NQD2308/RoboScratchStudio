@@ -1,3 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using RoboScratchStudio.Models;
+using RoboScratchStudio.Repositories;
+
 namespace RoboScratchStudio
 {
     public class Program
@@ -8,6 +12,16 @@ namespace RoboScratchStudio
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            //Dependency Injection
+            builder.Services.AddDbContext<RoboScratchStudioContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("RoboScratchStudio"));
+            });
+
+            //DI
+            builder.Services.AddTransient<IHomeRepository, HomeRepository>();
+            builder.Services.AddTransient<IDetailCourseRepository, DetailCourseRepository>();
 
             var app = builder.Build();
 

@@ -1,12 +1,28 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RoboScratchStudio.Models;
+using RoboScratchStudio.Repositories;
 
 namespace RoboScratchStudio.Controllers
 {
     public class CourseController : Controller
     {
-        public IActionResult Detail()
+        private RoboScratchStudioContext _ctx;
+
+        private readonly ILogger<HomeController> _logger;
+        private IHomeRepository _homeRepository;
+
+        public CourseController(RoboScratchStudioContext ctx, ILogger<HomeController> logger, IHomeRepository homeRepository)
         {
-            return View();
+            _ctx = ctx;
+            _logger = logger;
+            _homeRepository = homeRepository;
+        }
+
+        public IActionResult Detail(int Id)
+        {
+            var course = _homeRepository.findCourseById(Id);
+
+            return View("Detail", course);
         }
     }
 }
