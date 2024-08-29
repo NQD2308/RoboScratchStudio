@@ -11,11 +11,11 @@
     <!-- images - start -->
     <div class=" grid gap-4 lg:grid-cols-4">
         <div id="slideshow" class="order-first relative overflow-hidden rounded-lg bg-gray-100 lg:col-span-4">
-            <img src="~/assets/images/wedokit.png" alt="Photo" class="w-full h-auto rounded-lg object-cover object-center absolute opacity-0 transition-opacity duration-1000" />
-            <img src="~/assets/images/wedorobo1.png" alt="Photo" class="w-full h-auto rounded-lg object-cover object-center absolute opacity-0 transition-opacity duration-1000" />
-            <img src="~/assets/images/helicopter.png" alt="Photo" class="w-full h-auto rounded-lg object-cover object-center absolute opacity-0 transition-opacity duration-1000" />
-            <img src="~/assets/images/wedoroboall.png" alt="Photo" class="w-full h-auto rounded-lg object-cover object-center absolute opacity-0 transition-opacity duration-1000" />
+            @foreach (var item in Model.CourseTitleImages)
+            {
+                <img src="~/assets/images/@item.ImageTitle" alt="Photo" class="w-full h-auto rounded-lg object-cover object-center absolute opacity-0 transition-opacity duration-1000" />
 
+            }
         </div>
     </div>
 
@@ -25,32 +25,32 @@
     <div class="md:py-8">
         <!-- name - start -->
         <div class="mb-2 md:mb-3">
-            <h2 class="w-fit text-2xl px-6 py-2 font-bold text-white bg-orange-500 rounded-full lg:text-3xl">Wedo Robo Scratch</h2>
+            <h2 class="w-fit text-2xl px-6 py-2 font-bold text-white bg-orange-500 rounded-full lg:text-3xl">@Model.Name</h2>
         </div>
         <!-- name - end -->
         @* Description *@
         <div class="w-full mb-2 md:mb-3">
-            <p class="my-2">Khóa học WeDo Robo Scratch là bước đầu tuyệt vời cho trẻ em khám phá thế giới lập trình và robotics. Tại đây, các em sẽ học cách lập trình các mô hình robot thông qua phần mềm Scratch, giúp phát triển tư duy logic và kỹ năng giải quyết vấn đề. Với phương pháp học tập kết hợp giữa sáng tạo và thực hành, khóa học không chỉ mang lại niềm vui mà còn khơi dậy niềm đam mê công nghệ trong trẻ. Đội ngũ giảng viên giàu kinh nghiệm sẽ hướng dẫn từng bước, đảm bảo mỗi học viên đều có thể tự tin tạo ra các dự án robot độc đáo của riêng mình.</p>
+            <p class="my-2">@Model.Subtext</p>
             <div class="space-y-2">
                 <!-- check - start -->
                 <div class="flex gap-2 items-center">
                     <i class="fa-solid fa-child-reaching text-xl ml-0.5"></i>
 
-                    <span class="text-gray-600">7 - 10 tuổi</span>
+                    <span class="text-gray-600">@Model.AgeRequest</span>
                 </div>
                 <!-- check - end -->
                 <!-- check - start -->
                 <div class="flex gap-2 items-center">
                     <i class="fa-regular fa-calendar-days text-xl"></i>
 
-                    <span class="text-gray-600">1 buổi/tuần</span>
+                    <span class="text-gray-600">@Model.DurationInWeek</span>
                 </div>
                 <!-- check - end -->
                 <!-- check - start -->
                 <div class="flex gap-2 items-center">
                     <i class="fa-regular fa-clock text-xl"></i>
 
-                    <span class="text-gray-600">2 tiếng</span>
+                    <span class="text-gray-600">@Model.DurationInDay</span>
                 </div>
                 <!-- check - end -->
             </div>
@@ -71,24 +71,37 @@
 
 <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-        <div class="space-y-2">
-            <img class="w-full h-auto object-cover" src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Masonry Image">
-            <img class="w-full h-auto object-cover" src="https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Masonry Image">
-            <img class="w-full h-auto object-cover" src="https://images.unsplash.com/photo-1567016526105-22da7c13161a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Masonry Image">
-        </div>
-        <div class="space-y-2">
-            <img class="w-full h-auto object-cover" src="https://images.unsplash.com/photo-1668584054131-d5721c515211?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Masonry Image">
-            <img class="w-full h-auto object-cover" src="https://images.unsplash.com/photo-1664574654529-b60630f33fdb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Masonry Image">
-        </div>
-        <div class="space-y-2">
-            <img class="w-full h-auto object-cover" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Masonry Image">
-            <img class="w-full h-auto object-cover" src="https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Masonry Image">
-            <img class="w-full h-auto object-cover" src="https://images.unsplash.com/photo-1542125387-c71274d94f0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Masonry Image">
-        </div>
-        <div class="space-y-2">
-            <img class="w-full h-auto object-cover" src="https://images.unsplash.com/photo-1668869713519-9bcbb0da7171?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Masonry Image">
-            <img class="w-full h-auto object-cover" src="https://images.unsplash.com/photo-1668584054035-f5ba7d426401?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Masonry Image">
-        </div>
+        @{
+            // Khởi tạo một danh sách với 4 phần tử để lưu các danh sách hình ảnh
+            var imageGroups = new List<List<string>> {
+        new List<string>(),
+        new List<string>(),
+        new List<string>(),
+        new List<string>()
+        };
+
+            int index = 0;
+
+            // Phân chia các hình ảnh vào các nhóm
+            foreach (var item in Model.Galleries)
+            {
+                // Thêm hình ảnh vào nhóm tương ứng
+                imageGroups[index].Add(item.Img);
+
+                // Tăng chỉ số, nếu chỉ số >= 4 thì đặt lại về 0
+                index = (index + 1) % 4;
+            }
+        }
+
+        @for (int i = 0; i < 4; i++)
+        {
+            <div class="space-y-2">
+                @foreach (var img in imageGroups[i])
+                {
+                    <img class="w-full h-auto object-cover" src="~/assets/activities/images/@img" alt="Gallery Masonry Image">
+                }
+            </div>
+        }
     </div>
 </div>
 @* Gallery *@
@@ -98,158 +111,49 @@
 
 <div class="bg-white py-6 sm:py-8 lg:py-12">
     <div class="mx-auto max-w-screen-xl px-4 md:px-8">
-        <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl xl:mb-12">Our plans for you</h2>
 
         <div class="mb-6 grid gap-6 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 lg:gap-8">
-            <!-- plan - start -->
-            <div class="flex flex-col rounded-lg border p-4 pt-6">
-                <div class="mb-12">
-                    <div class="mb-2 text-center text-2xl font-bold text-gray-800">Gói 1 Tháng</div>
+            @foreach (var item in Model.Pricings)
+            {
+                <!-- plan - start -->
+                <div class="flex flex-col rounded-lg border p-4 pt-6 @(item.IdCategoryNavigation.Id == 1 ? "" :
+          item.IdCategoryNavigation.Id == 2 ? "bg-red-500" :
+          item.IdCategoryNavigation.Id == 3 ? "bg-orange-500" :
+          item.IdCategoryNavigation.Id == 4 ? "bg-blue-500" : "")">
+                    <div class="mb-12">
+                        <div class="mb-2 text-center text-2xl font-bold text-gray-800">@item.Name</div>
 
-                    <p class="mx-auto mb-8 px-8 text-center text-gray-500">For individuals and organizations who want to try our system</p>
+                        <p class="mx-auto mb-8 px-8 text-center text-gray-500">@item.Subtext</p>
 
-                    <div class="space-y-2">
-                        <!-- check - start -->
-                        <div class="flex gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
+                        <div class="space-y-2">
+                            @foreach (var p in item.IdBenefits)
+                            {
+                                <!-- check - start -->
+                                <div class="flex gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
 
-                            <span class="text-gray-600">Giảm 16% học phí</span>
+                                    <span class="text-gray-600">@p.BenefitDescription</span>
+                                </div>
+                                <!-- check - end -->
+                            }
                         </div>
-                        <!-- check - end -->
-                        <!-- check - start -->
-                        <div class="flex gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
+                    </div>
 
-                            <span class="text-gray-600">Tặng tài liệu học</span>
+                    <div class="mt-auto flex flex-col gap-8">
+                        <div class="flex items-end justify-center gap-1">
+                            <span class="self-start text-gray-600">@item.Currency</span>
+                            <span class="text-4xl font-bold text-gray-800">@item.Price?.ToString("#,##0.000")</span>
+                            <span class="text-gray-500">@item.UserCategory/@item.DurationCourse</span>
                         </div>
-                        <!-- check - end -->
-                        <!-- check - start -->
-                        <div class="flex gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
 
-                            <span class="text-gray-600">Tặng 1 buổi trải nghiệm lắp ráp rotbot EV3 hoặc lập trình game với scratch</span>
-                        </div>
-                        <!-- check - end -->
-
+                        <a href="#" class="block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base">Liên hệ</a>
                     </div>
                 </div>
+                <!-- plan - end -->
+            }
 
-                <div class="mt-auto flex flex-col gap-8">
-                    <div class="flex items-end justify-center gap-1">
-                        <span class="self-start text-gray-600">đ</span>
-                        <span class="text-4xl font-bold text-gray-800">500.000</span>
-                        <span class="text-gray-500">bé/tháng</span>
-                    </div>
-
-                    <a href="#" class="block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base">Liên hệ</a>
-                </div>
-            </div>
-            <!-- plan - end -->
-            <!-- plan - start -->
-            <div class="relative flex flex-col rounded-lg border-2 border-blue-500 p-4 pt-6">
-                <div class="mb-12">
-                    <div class="absolute inset-x-0 -top-3 flex justify-center">
-                        <span class="flex h-6 items-center justify-center rounded-full bg-blue-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white">most popular</span>
-                    </div>
-
-                    <div class="mb-2 text-center text-2xl font-bold text-gray-800">Gói 2 Tháng</div>
-
-                    <p class="mx-auto mb-8 px-8 text-center text-gray-500">Avanced feaures for Individuals and organizations</p>
-
-                    <div class="space-y-2">
-                        <!-- check - start -->
-                        <div class="flex gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-
-                            <span class="text-gray-600">Giảm 20% học phí</span>
-                        </div>
-                        <!-- check - end -->
-                        <div class="flex gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-
-                            <span class="text-gray-600">Tặng tài liệu học</span>
-                        </div>
-                        <!-- check - start -->
-                        <div class="flex gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-
-                            <span class="text-gray-600">Tặng 1 buổi trải nghiệm lắp ráp rotbot EV3 hoặc lập trình game với scratch</span>
-                        </div>
-                        <!-- check - end -->
-                    </div>
-                </div>
-
-                <div class="mt-auto flex flex-col gap-8">
-                    <div class="flex items-end justify-center gap-1">
-                        <span class="self-start text-gray-600">đ</span>
-                        <span class="text-4xl font-bold text-gray-800">960.000</span>
-                        <span class="text-gray-500">bé/tháng</span>
-                    </div>
-
-                    <a href="#" class="block rounded-lg bg-blue-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-blue-300 transition duration-100 hover:bg-blue-600 focus-visible:ring active:bg-blue-700 md:text-base">Liên hệ</a>
-                </div>
-            </div>
-            <!-- plan - end -->
-            <!-- plan - start -->
-            <div class="flex flex-col rounded-lg border p-4 pt-6">
-                <div class="mb-12">
-                    <div class="mb-2 text-center text-2xl font-bold text-gray-800">Gói 3 Tháng</div>
-
-                    <p class="mx-auto mb-8 px-8 text-center text-gray-500">Maximum performace for organisations</p>
-
-                    <div class="space-y-2">
-                        <!-- check - start -->
-                        <div class="flex gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-
-                            <span class="text-gray-600">Giảm 25% học phí</span>
-                        </div>
-                        <!-- check - end -->
-                        <div class="flex gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-
-                            <span class="text-gray-600">Tặng tài liệu học</span>
-                        </div>
-                        <!-- check - start -->
-                        <div class="flex gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-
-                            <span class="text-gray-600">Tặng 2 buổi trải nghiệm lắp ráp rotbot EV3 hoặc lập trình game với scratch</span>
-                        </div>
-                        <!-- check - end -->
-                        
-                    </div>
-                </div>
-
-                <div class="mt-auto flex flex-col gap-8">
-                    <div class="flex items-end justify-center gap-1">
-                        <span class="self-start text-gray-600">đ</span>
-                        <span class="text-4xl font-bold text-gray-800">1.350.000</span>
-                        <span class="text-gray-500">bé/tháng</span>
-                    </div>
-
-                    <a href="#" class="block rounded-lg bg-gray-800 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-gray-700 focus-visible:ring active:bg-gray-600 md:text-base">Liên hệ</a>
-                </div>
-            </div>
-            <!-- plan - end -->
         </div>
     </div>
 </div>

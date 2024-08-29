@@ -21,6 +21,9 @@ namespace RoboScratchStudio.Repositories
                 .Include(c => c.CourseTitleImages)
                 .Include(c => c.Galleries) // Bao gồm danh sách Galleries liên quan đến Course
                 .Include(c => c.Pricings.OrderBy(p => p.Price)) // Bao gồm danh sách Pricing liên quan đến Course
+                    .ThenInclude(p => p.IdBenefits)
+                .Include(c => c.Pricings) // Bao gồm bảng Pricing
+                    .ThenInclude(p => p.IdCategoryNavigation) // Bao gồm thông tin từ bảng CourseCategory thông qua IdCategoryNavigation
                 .FirstOrDefault(c => c.Id == id); // Lấy Course với id tương ứng
 
             return course;
