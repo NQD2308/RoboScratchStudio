@@ -3,7 +3,7 @@
     <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
         <!-- text - start -->
         <div class="mb-10 md:mb-16">
-            <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">Gallery</h2>
+            <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">Thư viện</h2>
 
             <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated.</p>
         </div>
@@ -25,7 +25,7 @@
 
                 <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50"></div>
 
-                <span class="relative mr-3 mb-3 inline-block rounded-lg border border-gray-500 px-2 py-1 text-xs text-gray-200 backdrop-blur md:px-3 md:text-sm">Campus</span>
+                <span class="relative mr-3 mb-3 inline-block rounded-lg border border-gray-500 px-2 py-1 text-xs text-gray-200 backdrop-blur md:px-3 md:text-sm">Khuôn viên</span>
             </a>
             <!-- image - end -->
             <!-- image - start -->
@@ -34,7 +34,7 @@
 
                 <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50"></div>
 
-                <span class="relative mr-3 mb-3 inline-block rounded-lg border border-gray-500 px-2 py-1 text-xs text-gray-200 backdrop-blur md:px-3 md:text-sm">Classroom</span>
+                <span class="relative mr-3 mb-3 inline-block rounded-lg border border-gray-500 px-2 py-1 text-xs text-gray-200 backdrop-blur md:px-3 md:text-sm">Phòng học</span>
             </a>
             <!-- image - end -->
         </div>
@@ -46,7 +46,7 @@
 <div class="max-w-7xl px-4 lg:px-6 lg:px-8 py-12 lg:py-24 mx-auto">
     <div class="mb-6 sm:mb-10 max-w-2xl text-center mx-auto">
         <h2 class="font-medium text-black text-2xl sm:text-4xl dark:text-white">
-            Contacts
+            Liên hệ
         </h2>
     </div>
 
@@ -73,7 +73,7 @@
                                 Viet Nam
                             </p>
                             <address class="mt-1 text-black not-italic dark:text-white">
-                                7/1 Thanh Thai Street, Ward 14, District 10, Ho Chi Minh
+                                7/1 Đường Thành Thái, Phường 14, Quận 10, Hồ Chí Minh
                             </address>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
 
             <div>
                 <h3 class="mb-5 font-semibold text-black dark:text-white">
-                    Our contacts
+                    Liên hệ chúng tôi
                 </h3>
 
                 <!-- Grid -->
@@ -93,7 +93,7 @@
 
                         <div class="grow">
                             <p class="text-sm text-gray-600 dark:text-neutral-400">
-                                Email us
+                                Email
                             </p>
                             <p>
                                 <a class="relative inline-block font-medium text-black before:absolute before:bottom-0.5 before:start-0 before:-z-[1] before:w-full before:h-1 before:bg-lime-400 hover:before:bg-black focus:outline-none focus:before:bg-black dark:text-white dark:hover:before:bg-white dark:focus:before:bg-white" href="mailto:example@site.so">
@@ -108,10 +108,10 @@
 
                         <div class="grow">
                             <p class="text-sm text-gray-600 dark:text-neutral-400">
-                                Call us
+                                Điện thoại
                             </p>
                             <p>
-                                <a class="relative inline-block font-medium text-black before:absolute before:bottom-0.5 before:start-0 before:-z-[1] before:w-full before:h-1 before:bg-lime-400 hover:before:bg-black focus:outline-none focus:before:bg-black dark:text-white dark:hover:before:bg-white dark:focus:before:bg-white" href="mailto:example@site.so">
+                                <a id="callButton" class="relative inline-block font-medium text-black before:absolute before:bottom-0.5 before:start-0 before:-z-[1] before:w-full before:h-1 before:bg-lime-400 hover:before:bg-black focus:outline-none focus:before:bg-black dark:text-white dark:hover:before:bg-white dark:focus:before:bg-white" href="mailto:example@site.so">
                                     +84 522 925 104
                                 </a>
                             </p>
@@ -126,3 +126,9 @@
 </div>
 <!-- End Contact -->
 @* Studio contact *@
+
+<script>
+    document.getElementById("callButton").addEventListener("click", function () {
+        window.location.href = "tel:+84522925104"; // Thay đổi số điện thoại này bằng số của bạn
+    });
+</script>

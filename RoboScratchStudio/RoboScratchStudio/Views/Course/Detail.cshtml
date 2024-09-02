@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout_no_carousel.cshtml";
 }
 
-<h2 class=" flex items-center mb-4 px-4 mt-4 text-base text-white bg-orange-400 py-2 md:mb-8 lg:text-xl xl:mb-12">Home <i class="fa-solid fa-chevron-right px-2"></i> @Model.Name</h2>
+<h2 class=" flex items-center mb-4 px-4 mt-4 text-base text-white bg-orange-400 py-2 md:mb-8 lg:text-xl xl:mb-12"><span>Trang chủ</span> <i class="fa-solid fa-chevron-right px-2 text-sm mt-1"></i> <span>@Model.Name</span> </h2>
 
 @* Detail *@
 <div class="grid gap-8 mb-4 md:grid-cols-2 md:mb-8">
@@ -13,8 +13,17 @@
         <div id="slideshow" class="order-first relative overflow-hidden rounded-lg bg-gray-100 lg:col-span-4">
             @foreach (var item in Model.CourseTitleImages)
             {
-                <img src="~/assets/images/@item.ImageTitle" alt="Photo" class="w-full h-auto rounded-lg object-cover object-center absolute opacity-0 transition-opacity duration-1000" />
-
+                @if (item.ImageTitle != null &&
+               (item.ImageTitle.EndsWith(".mp4", StringComparison.OrdinalIgnoreCase) ||
+               item.ImageTitle.EndsWith(".avi", StringComparison.OrdinalIgnoreCase) ||
+               item.ImageTitle.EndsWith(".mkv", StringComparison.OrdinalIgnoreCase)))
+                {
+                    <video autoplay loop muted src="~/assets/videos/@item.ImageTitle" alt="Video scratch game class" class="w-full h-auto object-cover object-center"></video>
+                }
+                else
+                {
+                    <img src="~/assets/images/@item.ImageTitle" alt="Photo" class="w-full h-auto rounded-lg object-cover object-center absolute opacity-0 transition-opacity duration-1000" />
+                }
             }
         </div>
     </div>
@@ -58,7 +67,7 @@
         @* Description *@
         <!-- buttons - start -->
         <div class="flex gap-2.5 mt-auto">
-            <a href="#" class="w-full inline-block flex-1 rounded-lg bg-orange-500 px-8 py-3 text-center text-sm font-semibold text-white ease-in-out duration-300 outline-none ring-orange-300 transition duration-100 hover:bg-orange-600 focus-visible:ring active:bg-orange-700 sm:flex-none md:text-base">Contact now</a>
+            <a href="#" id="callButton" class="w-full inline-block flex-1 rounded-lg bg-orange-500 px-8 py-3 text-center text-sm font-semibold text-white ease-in-out duration-300 outline-none ring-orange-300 transition duration-100 hover:bg-orange-600 focus-visible:ring active:bg-orange-700 sm:flex-none md:text-base">Liên hệ</a>
         </div>
         <!-- buttons - end -->
     </div>
@@ -67,47 +76,55 @@
 @* Detail *@
 
 @* Gallery *@
-<h2 class="mb-4 text-center text-2xl font-bold text-gray-800 text-white capitalize bg-orange-400 py-2 md:mb-8 lg:text-3xl xl:mb-12">GALLERY</h2>
+@if (Model.Galleries.Count != 0)
+{
+    <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 text-white capitalize bg-orange-400 py-2 md:mb-8 lg:text-3xl xl:mb-12">HÌNH ẢNH KHÓA HỌC</h2>
 
-<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-        @{
-            // Khởi tạo một danh sách với 4 phần tử để lưu các danh sách hình ảnh
-            var imageGroups = new List<List<string>> {
+    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            @{
+                // Khởi tạo một danh sách với 4 phần tử để lưu các danh sách hình ảnh
+                var imageGroups = new List<List<string>> {
         new List<string>(),
         new List<string>(),
         new List<string>(),
         new List<string>()
         };
 
-            int index = 0;
+                int index = 0;
 
-            // Phân chia các hình ảnh vào các nhóm
-            foreach (var item in Model.Galleries)
-            {
-                // Thêm hình ảnh vào nhóm tương ứng
-                imageGroups[index].Add(item.Img);
-
-                // Tăng chỉ số, nếu chỉ số >= 4 thì đặt lại về 0
-                index = (index + 1) % 4;
-            }
-        }
-
-        @for (int i = 0; i < 4; i++)
-        {
-            <div class="space-y-2">
-                @foreach (var img in imageGroups[i])
+                // Phân chia các hình ảnh vào các nhóm
+                foreach (var item in Model.Galleries)
                 {
-                    <img class="w-full h-auto object-cover" src="~/assets/activities/images/@img" alt="Gallery Masonry Image">
+                    // Thêm hình ảnh vào nhóm tương ứng
+                    imageGroups[index].Add(item.Img);
+
+                    // Tăng chỉ số, nếu chỉ số >= 4 thì đặt lại về 0
+                    index = (index + 1) % 4;
                 }
-            </div>
-        }
+            }
+
+            @for (int i = 0; i < 4; i++)
+            {
+                <div class="space-y-2">
+                    @foreach (var img in imageGroups[i])
+                    {
+                        <img class="w-full h-auto object-cover" src="~/assets/activities/images/@img" alt="Gallery Masonry Image">
+                    }
+                </div>
+            }
+        </div>
     </div>
-</div>
+}
+else
+{
+    @* Không có gì *@
+}
+
 @* Gallery *@
 
 @* Pricing *@
-<h2 class="mb-4 text-center text-2xl font-bold text-gray-800 text-white capitalize bg-orange-400 py-2 md:mb-8 lg:text-3xl xl:mb-12">PRICING</h2>
+<h2 class="mb-4 text-center text-2xl font-bold text-gray-800 text-white capitalize bg-orange-400 py-2 md:mb-8 lg:text-3xl xl:mb-12">HỌC PHÍ</h2>
 
 <div class="bg-white py-6 sm:py-8 lg:py-12">
     <div class="mx-auto max-w-screen-xl px-4 md:px-8">
@@ -116,11 +133,11 @@
             @foreach (var item in Model.Pricings)
             {
                 <!-- plan - start -->
-                <div class="flex flex-col rounded-lg border-2 p-4 pt-6 
+                <div class="flex flex-col rounded-lg border-2 p-4 pt-6
         @(item.IdPricingCategoryNavigation.Id == 1 ? "border-gray-500" :
-          item.IdPricingCategoryNavigation.Id == 2 ? "border-red-500" :
+          item.IdPricingCategoryNavigation.Id == 2 ? "border-blue-500" :
           item.IdPricingCategoryNavigation.Id == 3 ? "border-orange-500" :
-          item.IdPricingCategoryNavigation.Id == 4 ? "border-blue-500" : "")">
+          item.IdPricingCategoryNavigation.Id == 4 ? "border-red-500" : "")">
                     <div class="mb-12">
                         <div class="mb-2 text-center text-2xl font-bold text-gray-800">@item.IdPricingCategoryNavigation.Name</div>
 
@@ -149,15 +166,15 @@
                             <span class="text-gray-500">@item.UserCategory/@item.DurationCourse</span>
                         </div>
 
-                        <a href="#" class="block rounded-lg px-8 py-3 text-white text-center text-sm font-semibold outline-none ring-indigo-300 transition duration-100
+                        <a asp-controller="Home" asp-action="Contact" id="callButton" class="block rounded-lg px-8 py-3 text-white text-center text-sm font-semibold outline-none ring-indigo-300 transition duration-100
           @(item.IdPricingCategoryNavigation.Id == 1 ? "bg-gray-500" :
-          item.IdPricingCategoryNavigation.Id == 2 ? "bg-red-500" :
+          item.IdPricingCategoryNavigation.Id == 2 ? "bg-blue-500" :
           item.IdPricingCategoryNavigation.Id == 3 ? "bg-orange-500" :
-          item.IdPricingCategoryNavigation.Id == 4 ? "bg-blue-500" : "")   
+          item.IdPricingCategoryNavigation.Id == 4 ? "bg-red-500" : "")
           @(item.IdPricingCategoryNavigation.Id == 1 ? "hover:bg-gray-600" :
-          item.IdPricingCategoryNavigation.Id == 2 ? "hover:bg-red-600" :
+          item.IdPricingCategoryNavigation.Id == 2 ? "hover:bg-blue-600" :
           item.IdPricingCategoryNavigation.Id == 3 ? "hover:bg-orange-600" :
-          item.IdPricingCategoryNavigation.Id == 4 ? "hover:bg-blue-600" : "")
+          item.IdPricingCategoryNavigation.Id == 4 ? "hover:bg-red-600" : "")
            focus-visible:ring active:text-gray-700 md:text-base">Liên hệ</a>
                     </div>
                 </div>
@@ -183,6 +200,11 @@
 
     // Hiển thị ảnh đầu tiên khi tải trang
     slides[currentIndex].classList.add('active');
+
+    document.getElementById("callButton").addEventListener("click", function () {
+        window.location.href = "tel:+84522925104"; // Thay đổi số điện thoại này bằng số của bạn
+    });
+
 </script>
 
 <style>

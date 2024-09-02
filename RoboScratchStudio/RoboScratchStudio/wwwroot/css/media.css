@@ -6,6 +6,14 @@
     text-overflow: ellipsis;
 }
 
+.overflow-header-subtext {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 @media only screen and (max-width: 768px) {
     .overflow-text {
         display: -webkit-box;

@@ -22,6 +22,11 @@ namespace RoboScratchStudio.Controllers
         {
             var course = _homeRepository.findCourseById(Id);
 
+            InformationDAO m = new InformationDAO();
+            m.displayCourseByQuantityRequest = _homeRepository.takeCourses(4); // Hiển thị 4 khóa học
+
+            ViewBag.Header = m;
+
             return View("Detail", course);
         }
     }

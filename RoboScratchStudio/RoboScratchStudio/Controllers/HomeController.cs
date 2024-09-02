@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using RoboScratchStudio.Models;
 using RoboScratchStudio.Repositories;
 using System.Diagnostics;
@@ -23,21 +23,33 @@ namespace RoboScratchStudio.Controllers
 
         public IActionResult Index()
         {
-            List<Course> courses = _homeRepository.GetAllcourses();
-            return View(courses);
+            InformationDAO m = new InformationDAO();
+            m.courseList = _homeRepository.GetAllcourses();     // Hiển thị toàn bộ các khóa học
+            m.displayCourseByQuantityRequest = _homeRepository.takeCourses(4); // Hiển thị 4 khóa học
+
+            return View(m);
         }
         public IActionResult Pricing()
         {
-            return View();
+            InformationDAO m = new InformationDAO();       
+            m.displayCourseByQuantityRequest = _homeRepository.takeCourses(4); // Hiển thị 4 khóa học
+
+            return View(m);
         }
         public IActionResult Contact()
         {
-            return View();
+            InformationDAO m = new InformationDAO();        
+            m.displayCourseByQuantityRequest = _homeRepository.takeCourses(4); // Hiển thị 4 khóa học
+
+            return View(m);
         }
 
         public IActionResult Privacy()
         {
-            return View();
+            InformationDAO m = new InformationDAO();        
+            m.displayCourseByQuantityRequest = _homeRepository.takeCourses(4); // Hiển thị 4 khóa học
+
+            return View(m);
         }
 
         public IActionResult ErrorPage()

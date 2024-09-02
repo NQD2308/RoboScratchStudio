@@ -1,6 +1,6 @@
-﻿@model List<RoboScratchStudio.Models.Course>
+﻿@model RoboScratchStudio.Models.InformationDAO
 
-<div class="bg-white py-6 sm:py-8 lg:pb-24">
+@* <div class="bg-white py-6 sm:py-8 lg:pb-24">
     <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
         <p class="mb-2 text-center font-semibold text-indigo-500 md:mb-3 lg:text-lg">Introducing</p>
 
@@ -8,13 +8,13 @@
 
         <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated.</p>
     </div>
-</div>
+</div> *@
 
-<h2 class="mb-4 text-center text-2xl font-bold text-gray-800 text-white capitalize bg-orange-500 py-2 md:mb-8 lg:text-3xl xl:mb-12">CLASSES</h2>
+<h2 class="mb-4 text-center text-2xl font-bold text-gray-800 text-white capitalize bg-orange-500 py-2 md:mb-8 lg:text-3xl xl:mb-12">KHÓA HỌC</h2>
 
 @if (Model != null)
 {
-    @foreach (var item in Model)
+    @foreach (var item in Model.courseList)
     {
         if (item.Id == 1)
         {
@@ -22,7 +22,11 @@
             <div class="flex justify-center items-center bg-blue-500 flex-col overflow-hidden rounded-lg  sm:flex-row md:h-[500px]">
                 <!-- image - start -->
                 <div class="order-first h-48 w-full sm:order-none sm:h-auto sm:w-1/2 lg:w-2/5">
-                    <img src="~/assets/images/wedokit.png" alt="Photo" class="h-full w-full object-cover object-center" />
+                    @foreach (var img in item.CourseTitleImages)
+                    {
+                        <img src="~/assets/images/@img.ImageTitle" alt="Photo" class="h-full w-full object-cover object-center" />
+
+                    }
                 </div>
                 <!-- image - end -->
                 <!-- content - start -->
@@ -32,7 +36,7 @@
                     <p class="overflow-text mb-8 text-gray-600">@item.Subtext</p>
 
                     <div class="mt-auto">
-                        <a asp-controller="Course" asp-action="Detail" asp-route-Id="@item.Id" class="gap-2.5 inline-block rounded-lg bg-blue-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-blue-300 transition duration-100 hover:bg-blue-600 focus-visible:ring active:bg-blue-600 md:text-base transition">More <i class="fa-solid fa-angle-right"></i></a>
+                        <a asp-controller="Course" asp-action="Detail" asp-route-Id="@item.Id" class="gap-2.5 inline-block rounded-lg bg-blue-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-blue-300 transition duration-100 hover:bg-blue-600 focus-visible:ring active:bg-blue-600 md:text-base transition">Chi tiết <i class="fa-solid fa-angle-right"></i></a>
                     </div>
                 </div>
                 <!-- content - end -->
@@ -53,16 +57,15 @@
                             <p class="overflow-text mb-8 max-w-md">@item.Subtext</p>
 
                             <div class="flex justify-end mr-6">
-                                <a asp-controller="Course" asp-action="Detail" asp-route-Id="@item.Id" class="inline-block rounded-lg bg-gray-800 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-gray-900 focus-visible:ring active:bg-gray-1000 md:text-base">More <i class="fa-solid fa-angle-right"></i></a>
+                                <a asp-controller="Course" asp-action="Detail" asp-route-Id="@item.Id" class="inline-block rounded-lg bg-gray-800 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-gray-900 focus-visible:ring active:bg-gray-1000 md:text-base">Chi tiết <i class="fa-solid fa-angle-right"></i></a>
                             </div>
                         </div>
                         <!-- content - end -->
                         <!-- image - start -->
                         <div id="slideshow" class="order-first h-full w-full  sm:order-none sm:h-auto sm:w-1/2 lg:w-3/5 relative">
-                            @foreach(var img in item.CourseTitleImages)
+                            @foreach (var img in item.CourseTitleImages)
                             {
                                 <img src="~/assets/images/@img.ImageTitle" alt="Photo 1" class="h-full w-full object-cover object-center absolute opacity-0 transition-opacity duration-1000" />
-
                             }
                         </div>
                         <!-- image - end -->
@@ -77,7 +80,11 @@
             <div class="relative flex justify-center items-center flex-col overflow-hidden rounded-lg  sm:flex-row md:h-[500px]">
                 <!-- image - start -->
                 <div class="bg-orange-500/25 blur-sm">
-                    <video autoplay loop muted src="~/assets/videos/scratchgame.mp4" alt="Video scratch game class" class="h-full w-full object-cover object-center bg-orange-400/25"></video>
+                    @foreach (var img in item.CourseTitleImages)
+                    {
+                        <video autoplay loop muted src="~/assets/videos/@img.ImageTitle" alt="Video scratch game class" class="h-full w-full object-cover object-center bg-orange-400/25"></video>
+
+                    }
                 </div>
 
 
@@ -85,15 +92,14 @@
                 <!-- content - start -->
                 <div class="absolute md:px-8 flex rounded-full flex-col  sm:p-4 bg-white md:w-2/3 sm:w-1/2">
                     <div class="w-full flex justify-center md:-mt-8 lg:-mt-12 sm:mt-0 cus-sm-mb-4">
-                        <h2 class="w-fit px-6 rounded-full text-xl bg-white font-bold text-orange-500 md:text-2xl lg:text-4xl md:py-2 sm: py-0 md:mb-6 sm:mb-4">Scratch Game class</h2>
+                        <h2 class="w-fit px-6 rounded-full text-xl bg-white font-bold text-orange-500 md:text-2xl lg:text-4xl md:py-2 sm: py-0 md:mb-6 sm:mb-4">@item.Name</h2>
                     </div>
-                    <p class="overflow-text px-6 md:mb-8 sm:mb-4">
-                        The Scratch Game Class is the perfect starting point for kids aspiring to become game developers. In this course, students will learn how to create engaging games from simple ideas using Scratch software. The class helps develop logical thinking, creativity, and problem-solving skills through fun and practical projects. Guided by experienced instructors, children will gain the confidence to design their own unique games while discovering a passion for technology and programming at an early age.
-                        <div class="cus-sm-mt-4">
-                            <div class="flex justify-center ">
-                                <a asp-controller="Course" asp-action="Detail" class="gap-2.5 inline-block rounded-lg bg-orange-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-blue-300 transition duration-100 hover:bg-orange-600 focus-visible:ring active:bg-orange-600 md:text-base transition">More <i class="fa-solid fa-angle-right"></i></a>
-                            </div>
+                    <p class="overflow-text px-6 md:mb-8 sm:mb-4">@item.Subtext</p>
+                    <div class="cus-sm-mt-4">
+                        <div class="flex justify-center ">
+                            <a asp-controller="Course" asp-action="Detail" asp-route-Id="@item.Id" class="gap-2.5 inline-block rounded-lg bg-orange-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-blue-300 transition duration-100 hover:bg-orange-600 focus-visible:ring active:bg-orange-600 md:text-base transition">Chi tiết <i class="fa-solid fa-angle-right"></i></a>
                         </div>
+                    </div>
                 </div>
                 <!-- content - end -->
             </div>
