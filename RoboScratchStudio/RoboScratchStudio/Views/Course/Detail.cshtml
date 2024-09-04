@@ -75,6 +75,81 @@
 </div>
 @* Detail *@
 
+@* Content *@
+<h2 class="mb-4 text-center text-2xl font-bold text-gray-800 text-white capitalize bg-orange-400 py-2 md:mb-8 lg:text-3xl xl:mb-12">THÔNG TIN</h2>
+
+<div class="bg-white py-6 sm:py-8 lg:py-12">
+    <div class="mx-auto max-w-screen-xl px-4 md:px-8">
+        <h3 class="text-xl font-bold">Wedo 2.0 là gì?</h3>
+        <p class="my-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
+            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop 
+            publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <h3 class="text-xl font-bold">Scratch là gì</h3>
+        <p class="my-4">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <h3 class="text-xl font-bold">Nội dung khóa học</h3>
+        <p class="my-4">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <p class="my-4">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <p class="my-4">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <h3 class="text-xl font-bold">Lợi ích</h3>
+        <p class="my-4">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <p class="my-4">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <p class="my-4">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <p class="my-4">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+    </div>
+</div>
+
+@* Content *@
+
 @* Gallery *@
 @if (Model.Galleries.Count != 0)
 {
@@ -120,53 +195,54 @@ else
 {
     @* Không có gì *@
 }
-
 @* Gallery *@
 
 @* Pricing *@
-<h2 class="mb-4 text-center text-2xl font-bold text-gray-800 text-white capitalize bg-orange-400 py-2 md:mb-8 lg:text-3xl xl:mb-12">HỌC PHÍ</h2>
+@if (Model.Pricings.Count != 0)
+{
+    <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 text-white capitalize bg-orange-400 py-2 md:mb-8 lg:text-3xl xl:mb-12">HỌC PHÍ</h2>
 
-<div class="bg-white py-6 sm:py-8 lg:py-12">
-    <div class="mx-auto max-w-screen-xl px-4 md:px-8">
+    <div class="bg-white py-6 sm:py-8 lg:py-12">
+        <div class="mx-auto max-w-screen-xl px-4 md:px-8">
 
-        <div class="mb-6 grid gap-6 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 lg:gap-8">
-            @foreach (var item in Model.Pricings)
-            {
-                <!-- plan - start -->
-                <div class="flex flex-col rounded-lg border-2 p-4 pt-6
+            <div class="mb-6 grid gap-6 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 lg:gap-8">
+                @foreach (var item in Model.Pricings)
+                {
+                    <!-- plan - start -->
+                    <div class="flex flex-col rounded-lg border-2 p-4 pt-6
         @(item.IdPricingCategoryNavigation.Id == 1 ? "border-gray-500" :
           item.IdPricingCategoryNavigation.Id == 2 ? "border-blue-500" :
           item.IdPricingCategoryNavigation.Id == 3 ? "border-orange-500" :
           item.IdPricingCategoryNavigation.Id == 4 ? "border-red-500" : "")">
-                    <div class="mb-12">
-                        <div class="mb-2 text-center text-2xl font-bold text-gray-800">@item.IdPricingCategoryNavigation.Name</div>
+                        <div class="mb-12">
+                            <div class="mb-2 text-center text-2xl font-bold text-gray-800">@item.IdPricingCategoryNavigation.Name</div>
 
-                        <p class="mx-auto mb-8 px-8 text-center text-gray-500">@item.Subtext</p>
+                            <p class="mx-auto mb-8 px-8 text-center text-gray-500">@item.Subtext</p>
 
-                        <div class="space-y-2">
-                            @foreach (var p in item.IdBenefits)
-                            {
-                                <!-- check - start -->
-                                <div class="flex gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
+                            <div class="space-y-2">
+                                @foreach (var p in item.IdBenefits)
+                                {
+                                    <!-- check - start -->
+                                    <div class="flex gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                        </svg>
 
-                                    <span class="text-gray-600">@p.BenefitDescription</span>
-                                </div>
-                                <!-- check - end -->
-                            }
-                        </div>
-                    </div>
-
-                    <div class="mt-auto flex flex-col gap-8">
-                        <div class="flex items-end justify-center gap-1">
-                            <span class="self-start text-gray-600">@item.Currency</span>
-                            <span class="text-4xl font-bold text-gray-800">@item.Price?.ToString("#,##0.000")</span>
-                            <span class="text-gray-500">@item.UserCategory/@item.DurationCourse</span>
+                                        <span class="text-gray-600">@p.BenefitDescription</span>
+                                    </div>
+                                    <!-- check - end -->
+                                }
+                            </div>
                         </div>
 
-                        <a asp-controller="Home" asp-action="Contact" id="callButton" class="block rounded-lg px-8 py-3 text-white text-center text-sm font-semibold outline-none ring-indigo-300 transition duration-100
+                        <div class="mt-auto flex flex-col gap-8">
+                            <div class="flex items-end justify-center gap-1">
+                                <span class="self-start text-gray-600">@item.Currency</span>
+                                <span class="text-4xl font-bold text-gray-800">@item.Price?.ToString("#,##0.000")</span>
+                                <span class="text-gray-500">@item.UserCategory/@item.DurationCourse</span>
+                            </div>
+
+                            <a asp-controller="Home" asp-action="Contact" id="callButton" class="block rounded-lg px-8 py-3 text-white text-center text-sm font-semibold outline-none ring-indigo-300 transition duration-100
           @(item.IdPricingCategoryNavigation.Id == 1 ? "bg-gray-500" :
           item.IdPricingCategoryNavigation.Id == 2 ? "bg-blue-500" :
           item.IdPricingCategoryNavigation.Id == 3 ? "bg-orange-500" :
@@ -176,14 +252,19 @@ else
           item.IdPricingCategoryNavigation.Id == 3 ? "hover:bg-orange-600" :
           item.IdPricingCategoryNavigation.Id == 4 ? "hover:bg-red-600" : "")
            focus-visible:ring active:text-gray-700 md:text-base">Liên hệ</a>
+                        </div>
                     </div>
-                </div>
-                <!-- plan - end -->
-            }
+                    <!-- plan - end -->
+                }
 
+            </div>
         </div>
     </div>
-</div>
+}
+else
+{
+    @* Không hiển thị gì *@
+}
 @* Pricing *@
 
 <script>

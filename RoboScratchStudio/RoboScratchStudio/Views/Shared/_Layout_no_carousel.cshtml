@@ -153,97 +153,68 @@
                                         <p class="text-white sm:pr-8">+84 522 925 104 </p>
                                     </div>
                                 </div>
-                                
+
                             </div>
 
                             <!-- nav - start -->
                             <div>
-                                <div class="mb-4 font-bold text-white uppercase tracking-widest text-blue-800">Products</div>
+                                <div class="mb-4 font-bold text-white uppercase tracking-widest text-blue-800">Khóa học</div>
+
+                                <nav class="flex flex-col gap-4">
+                                    @foreach (var item in ViewBag.Header.displayCourseByQuantityRequest)
+                                    {
+                                        <div>
+                                            <a asp-controller="Course" asp-action="Detail" asp-route-Id="@item.Id" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">@item.Name</a>
+                                        </div>
+                                    }
+                                </nav>
+                            </div>
+                            <!-- nav - end -->
+                            <!-- nav - start -->
+                            <div>
+                                <div class="mb-4 font-bold text-white uppercase tracking-widest text-blue-800">Thông tin</div>
 
                                 <nav class="flex flex-col gap-4">
                                     <div>
-                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Overview</a>
+                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Giới thiệu</a>
                                     </div>
 
                                     <div>
-                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Solutions</a>
+                                        <a asp-controller="Home" asp-action="Contact" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Liên hệ</a>
                                     </div>
 
                                     <div>
-                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Pricing</a>
-                                    </div>
-
-                                    <div>
-                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Customers</a>
+                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Tuyển dụng</a>
                                     </div>
                                 </nav>
                             </div>
                             <!-- nav - end -->
                             <!-- nav - start -->
                             <div>
-                                <div class="mb-4 font-bold text-white uppercase tracking-widest text-blue-800">Company</div>
+                                <div class="mb-4 font-bold text-white uppercase tracking-widest text-blue-800">Hỗ Trợ</div>
 
                                 <nav class="flex flex-col gap-4">
                                     <div>
-                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">About</a>
+                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">Thông tin lớp</a>
                                     </div>
 
                                     <div>
-                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Investor Relations</a>
-                                    </div>
-
-                                    <div>
-                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Jobs</a>
-                                    </div>
-
-                                    <div>
-                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Press</a>
-                                    </div>
-
-                                    <div>
-                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Blog</a>
+                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">Câu hỏi</a>
                                     </div>
                                 </nav>
                             </div>
                             <!-- nav - end -->
                             <!-- nav - start -->
                             <div>
-                                <div class="mb-4 font-bold text-white uppercase tracking-widest text-blue-800">Support</div>
+                                <div class="mb-4 font-bold text-white uppercase tracking-widest text-blue-800">Dịch vụ</div>
 
                                 <nav class="flex flex-col gap-4">
                                     <div>
-                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">Contact</a>
+                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">Chính sách</a>
                                     </div>
 
                                     <div>
-                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">Documentation</a>
-                                    </div>
-
-                                    <div>
-                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">Chat</a>
-                                    </div>
-
-                                    <div>
-                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">FAQ</a>
-                                    </div>
-                                </nav>
-                            </div>
-                            <!-- nav - end -->
-                            <!-- nav - start -->
-                            <div>
-                                <div class="mb-4 font-bold text-white uppercase tracking-widest text-blue-800">Legal</div>
-
-                                <nav class="flex flex-col gap-4">
-                                    <div>
-                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">Terms of Service</a>
-                                    </div>
-
-                                    <div>
-                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">Privacy Policy</a>
-                                    </div>
-
-                                    <div>
-                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">Cookie settings</a>
+                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600">Quy định</a>
                                     </div>
                                 </nav>
                             </div>

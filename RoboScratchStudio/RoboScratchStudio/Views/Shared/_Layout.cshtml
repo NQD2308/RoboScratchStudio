@@ -201,17 +201,12 @@
                                 <div class="mb-4 font-bold text-white uppercase tracking-widest text-blue-800">Khóa học</div>
 
                                 <nav class="flex flex-col gap-4">
-                                    <div>
-                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Wedo</a>
-                                    </div>
-
-                                    <div>
-                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">EV3</a>
-                                    </div>
-
-                                    <div>
-                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Game</a>
-                                    </div>
+                                    @foreach (var item in Model.displayCourseByQuantityRequest)
+                                    {
+                                        <div>
+                                            <a asp-controller="Course" asp-action="Detail" asp-route-Id="@item.Id" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">@item.Name</a>
+                                        </div>
+                                    }
                                 </nav>
                             </div>
                             <!-- nav - end -->
@@ -225,7 +220,7 @@
                                     </div>
 
                                     <div>
-                                        <a href="#" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Liên hệ</a>
+                                        <a asp-controller="Home" asp-action="Contact" class="text-white transition duration-100 hover:text-blue-500 active:text-blue-600 ease-in-out duration-300">Liên hệ</a>
                                     </div>
 
                                     <div>
