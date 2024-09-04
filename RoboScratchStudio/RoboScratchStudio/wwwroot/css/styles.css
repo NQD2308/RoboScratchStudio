@@ -1,3 +1,50 @@
 ﻿html {
     scroll-behavior: smooth;
 }
+
+.cutoff-text {
+    --max-lines: 15;
+    --line-height: 1.4;
+
+    max-height: calc(var(--max-lines) * 1em * var(--line-height));
+    line-height: var(--line-height);
+
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.cutoff-text::before {
+    content: "";
+    position: absolute;
+    height: calc(2em * var(--line-height));
+    width: 100%;
+    bottom: 0;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent, white);
+}
+
+.expand-btn{
+    appearance: none;
+    width: 100%;
+    text-align: center;
+    padding: .5em;
+    cursor: pointer;
+    margin: 1rem auto;
+    z-index: 20;
+}
+
+.expand-btn::before{
+    content: "Hiển thị \25BC";
+    color: #fb923c;
+}
+
+.expand-btn:checked::before{
+    content: "Ẩn bớt \25B2";
+    color: #fb923c;
+}
+
+.cutoff-text:has(+ .expand-btn:checked) {
+    max-height: none;
+    transition: max-height 0.5s ease-in-out;
+}

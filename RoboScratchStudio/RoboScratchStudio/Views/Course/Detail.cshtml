@@ -31,7 +31,7 @@
     <!-- content - start -->
     <div class="pt-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
         <div class="max-w-screen-md">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-orange-500 text-gray-900 dark:text-white">@Model.Name</h2>
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-orange-500">@Model.Name</h2>
             <p class="mb-8 font-light text-gray-500 sm:text-xl dark:text-gray-400">@Model.Subtext</p>
             <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
                 <a id="callButton" class="inline-flex items-center cursor-pointer gap-3 justify-center px-4 py-2.5 text-base font-medium text-center text-white bg-orange-500 rounded-lg hover:bg-orange-600 transition delay-150 duration-250 ease-in-out">
@@ -51,8 +51,10 @@
 
 @* Content *@
 <div id="content" class="bg-white py-6 sm:pb-8 lg:pb-12">
-    <div class="mx-auto max-w-screen-xl px-4 md:px-8">
+    <div class="mx-auto max-w-screen-xl px-4 md:px-8 cutoff-text">
         @Html.Raw(Model.Content)
+        
+
         @* <h3 class="text-2xl font-bold text-orange-400">Scratch là gì?</h3>
         <div class="my-4 text-gray-500 ">
             Scratch là một ngôn ngữ lập trình trực quan và nền tảng cộng đồng trực tuyến được phát triển bởi MIT Media Lab. Nó được thiết kế để giúp trẻ em và người mới bắt đầu học lập trình một cách dễ dàng và thú vị. 
@@ -141,6 +143,8 @@
             <!-- check - end -->
         </div> *@
     </div>
+    <input class="expand-btn" type="checkbox" />
+    
 </div>
 
 @* Content *@
