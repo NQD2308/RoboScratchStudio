@@ -44,3 +44,5 @@ namespace RoboScratchStudio
         }
     }
 }
+
+// Scaffold-DBContext "Server=ADMIN-GK4O6HCO7\SQLEXPRESS;uid=sa;password=1;database=RoboScratchStudio;Encrypt=true;TrustServerCertificate=true" Microsoft.EntityFrameWorkCore.SqlServer -OutputDir Models -f 

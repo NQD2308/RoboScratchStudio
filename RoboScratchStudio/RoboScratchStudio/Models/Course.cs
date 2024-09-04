@@ -9,6 +9,8 @@ public partial class Course
 
     public string? Name { get; set; }
 
+    public string? ShortName { get; set; }
+
     public string? Subtext { get; set; }
 
     public string? AgeRequest { get; set; }
@@ -16,6 +18,8 @@ public partial class Course
     public string? DurationInWeek { get; set; }
 
     public string? DurationInDay { get; set; }
+
+    public string? Content { get; set; }
 
     public int? IdCourseCategory { get; set; }
 

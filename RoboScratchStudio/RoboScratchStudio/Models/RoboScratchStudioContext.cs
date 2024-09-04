@@ -53,6 +53,7 @@ public partial class RoboScratchStudioContext : DbContext
             entity.Property(e => e.AgeRequest)
                 .HasMaxLength(50)
                 .HasColumnName("age_request");
+            entity.Property(e => e.Content).HasColumnName("content");
             entity.Property(e => e.DurationInDay)
                 .HasMaxLength(50)
                 .HasColumnName("duration_in_day");
@@ -63,6 +64,9 @@ public partial class RoboScratchStudioContext : DbContext
             entity.Property(e => e.Name)
                 .HasMaxLength(50)
                 .HasColumnName("name");
+            entity.Property(e => e.ShortName)
+                .HasMaxLength(50)
+                .HasColumnName("short_name");
             entity.Property(e => e.Subtext).HasColumnName("subtext");
 
             entity.HasOne(d => d.IdCourseCategoryNavigation).WithMany(p => p.Courses)

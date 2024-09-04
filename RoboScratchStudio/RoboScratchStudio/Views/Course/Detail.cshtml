@@ -7,10 +7,10 @@
 <h2 class=" flex items-center mb-4 px-4 mt-4 text-base text-white bg-orange-400 py-2 md:mb-8 lg:text-xl xl:mb-12"><span>Trang chủ</span> <i class="fa-solid fa-chevron-right px-2 text-sm mt-1"></i> <span>@Model.Name</span> </h2>
 
 @* Detail *@
-<div class="grid gap-8 mb-4 md:grid-cols-2 md:mb-8">
+<section class="grid gap-8 mb-4 mt-24 bg-white md:grid-cols-2 md:mb-8">
     <!-- images - start -->
     <div class=" grid gap-4 lg:grid-cols-4">
-        <div id="slideshow" class="order-first relative overflow-hidden rounded-lg bg-gray-100 lg:col-span-4">
+        <div id="slideshow" class="order-first relative flex-col items-center overflow-hidden lg:col-span-4">
             @foreach (var item in Model.CourseTitleImages)
             {
                 @if (item.ImageTitle != null &&
@@ -27,124 +27,119 @@
             }
         </div>
     </div>
-
-
     <!-- images - end -->
     <!-- content - start -->
-    <div class="md:py-8">
-        <!-- name - start -->
-        <div class="mb-2 md:mb-3">
-            <h2 class="w-fit text-2xl px-6 py-2 font-bold text-white bg-orange-500 rounded-full lg:text-3xl">@Model.Name</h2>
-        </div>
-        <!-- name - end -->
-        @* Description *@
-        <div class="w-full mb-2 md:mb-3">
-            <p class="my-2">@Model.Subtext</p>
-            <div class="space-y-2">
-                <!-- check - start -->
-                <div class="flex gap-2 items-center">
-                    <i class="fa-solid fa-child-reaching text-xl ml-0.5"></i>
-
-                    <span class="text-gray-600">@Model.AgeRequest</span>
-                </div>
-                <!-- check - end -->
-                <!-- check - start -->
-                <div class="flex gap-2 items-center">
-                    <i class="fa-regular fa-calendar-days text-xl"></i>
-
-                    <span class="text-gray-600">@Model.DurationInWeek</span>
-                </div>
-                <!-- check - end -->
-                <!-- check - start -->
-                <div class="flex gap-2 items-center">
-                    <i class="fa-regular fa-clock text-xl"></i>
-
-                    <span class="text-gray-600">@Model.DurationInDay</span>
-                </div>
-                <!-- check - end -->
+    <div class="pt-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+        <div class="max-w-screen-md">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-orange-500 text-gray-900 dark:text-white">@Model.Name</h2>
+            <p class="mb-8 font-light text-gray-500 sm:text-xl dark:text-gray-400">@Model.Subtext</p>
+            <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
+                <a id="callButton" class="inline-flex items-center cursor-pointer gap-3 justify-center px-4 py-2.5 text-base font-medium text-center text-white bg-orange-500 rounded-lg hover:bg-orange-600 transition delay-150 duration-250 ease-in-out">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    Liên hệ
+                </a>
+                <a href="#content" class="inline-flex items-center justify-center gap-3 px-4 py-2.5 text-base font-medium text-center text-gray-400 hover:text-orange-400 transition delay-150 duration-250 ease-in-out">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <p>Chi tiết</p>
+                </a>
             </div>
         </div>
-        @* Description *@
-        <!-- buttons - start -->
-        <div class="flex gap-2.5 mt-auto">
-            <a href="#" id="callButton" class="w-full inline-block flex-1 rounded-lg bg-orange-500 px-8 py-3 text-center text-sm font-semibold text-white ease-in-out duration-300 outline-none ring-orange-300 transition duration-100 hover:bg-orange-600 focus-visible:ring active:bg-orange-700 sm:flex-none md:text-base">Liên hệ</a>
-        </div>
-        <!-- buttons - end -->
     </div>
-    <!-- content - end -->
-</div>
+    <!-- content - start -->
+</section>
 @* Detail *@
 
 @* Content *@
-<h2 class="mb-4 text-center text-2xl font-bold text-gray-800 text-white capitalize bg-orange-400 py-2 md:mb-8 lg:text-3xl xl:mb-12">THÔNG TIN</h2>
-
-<div class="bg-white py-6 sm:py-8 lg:py-12">
+<div id="content" class="bg-white py-6 sm:pb-8 lg:pb-12">
     <div class="mx-auto max-w-screen-xl px-4 md:px-8">
-        <h3 class="text-xl font-bold">Wedo 2.0 là gì?</h3>
-        <p class="my-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
-            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop 
-            publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-        <h3 class="text-xl font-bold">Scratch là gì</h3>
-        <p class="my-4">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        <h3 class="text-xl font-bold">Nội dung khóa học</h3>
-        <p class="my-4">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        <p class="my-4">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        <p class="my-4">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        <h3 class="text-xl font-bold">Lợi ích</h3>
-        <p class="my-4">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        <p class="my-4">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        <p class="my-4">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        <p class="my-4">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
+        @Html.Raw(Model.Content)
+        @* <h3 class="text-2xl font-bold text-orange-400">Scratch là gì?</h3>
+        <div class="my-4 text-gray-500 ">
+            Scratch là một ngôn ngữ lập trình trực quan và nền tảng cộng đồng trực tuyến được phát triển bởi MIT Media Lab. Nó được thiết kế để giúp trẻ em và người mới bắt đầu học lập trình một cách dễ dàng và thú vị. 
+            Scratch được sử dụng rộng rãi trong các trường học trên toàn thế giới như một công cụ giảng dạy lập trình và tư duy logic. Nó giúp học sinh không chỉ hiểu về lập trình mà còn phát triển kỹ năng tư duy phản biện và giải quyết vấn đề.
+        </div>
+        <div class="my-4 text-gray-500 ">
+            <span class="font-semibold">Lập Trình Kéo-Thả:</span> Scratch sử dụng giao diện lập trình kéo-thả, nơi người dùng có thể tạo ra các chương trình bằng cách kéo và thả các khối lệnh (blocks) vào khu vực lập trình. 
+            Các khối lệnh trong Scratch được chia thành nhiều nhóm khác nhau như chuyển động, điều khiển, cảm biến, âm thanh, và hình ảnh. Người dùng có thể kết hợp các khối này để tạo ra các chương trình phức tạp.
+        </div>
+        <div class="my-4 text-gray-500 ">
+            <span class="font-semibold">Học Tập Và Sáng Tạo:</span> Scratch được thiết kế để người dùng dễ dàng bắt đầu mà không cần bất kỳ kiến thức lập trình nào trước đó. Trẻ em có thể học các khái niệm cơ bản về lập trình như vòng lặp, điều kiện, và biến số thông qua các dự án vui nhộn. 
+            Scratch cho phép người dùng tạo ra các trò chơi, câu chuyện tương tác, hoạt hình, và nhiều dự án sáng tạo khác. Điều này khuyến khích trẻ em phát triển tư duy sáng tạo và giải quyết vấn đề.
+        </div>
+        <div class="my-4 text-gray-500 ">
+            <span class="font-semibold">Cộng Đồng Trực Tuyến:</span> Scratch có một cộng đồng trực tuyến nơi người dùng có thể chia sẻ các dự án của họ với mọi người trên toàn thế giới. Người dùng có thể xem, sửa đổi và học hỏi từ các dự án của người khác. 
+            Cộng đồng Scratch cung cấp một môi trường học tập hợp tác, nơi người dùng có thể tương tác, đưa ra phản hồi và học hỏi lẫn nhau.
+        </div>
+        <h3 class="text-2xl font-semibold text-orange-400">Tại sao nên cho trẻ tham gia?</h3>
+        <div class="my-4">
+            <p class="text-gray-500 ">Cho trẻ tham gia lớp học Scratch Game mang lại nhiều lợi ích quan trọng, không chỉ trong việc học lập trình mà còn phát triển các kỹ năng cần thiết cho sự phát triển toàn diện của trẻ. Một số lý do phụ huynh nên cân nhắc cho con em mình tham gia lớp học này:</p>
+            <ul class="pl-5">
+                <li class=" font-semibold py-2 text-gray-500">
+                    Phát Triển Tư Duy Lập Trình Thông Qua Trò Chơi
+                    <ul class="list-disc pl-5  text-gray-500 font-normal">
+                        <li><span class="font-semibold">Tư Duy Logic và Giải Quyết Vấn Đề:</span> Khi tạo ra các trò chơi bằng Scratch, trẻ phải suy nghĩ logic để xây dựng các quy tắc và hệ thống trong trò chơi. Quá trình này giúp trẻ phát triển tư duy logic và khả năng giải quyết vấn đề một cách hiệu quả.</li>
+                        <li><span class="font-semibold">Hiểu Nguyên Tắc Lập Trình:</span> Thông qua việc lập trình game, trẻ sẽ nắm vững các khái niệm cơ bản như vòng lặp, điều kiện, biến số và sự kiện, giúp tạo nền tảng vững chắc cho việc học các ngôn ngữ lập trình phức tạp hơn trong tương lai.</li>
+                    </ul>
+                </li>
+                <li class=" font-semibold py-2 text-gray-500">
+                    Kích Thích Sáng Tạo và Tư Duy Đổi Mới
+                    <ul class="list-disc pl-5 text-gray-500 font-normal">
+                        <li><span class="font-semibold">Tự Do Sáng Tạo Trò Chơi Riêng:</span> Scratch Game cho phép trẻ tự do sáng tạo ra các trò chơi theo ý tưởng của mình, từ cách thiết kế nhân vật, cảnh quan đến cốt truyện. Điều này không chỉ khuyến khích sự sáng tạo mà còn giúp trẻ phát triển kỹ năng thiết kế và tư duy đổi mới.</li>
+                        <li><span class="font-semibold">Thúc Đẩy Tinh Thần Khám Phá:</span> Trẻ được khuyến khích thử nghiệm nhiều cách tiếp cận khác nhau trong việc phát triển game, từ đó học hỏi và cải thiện kỹ năng lập trình của mình.</li>
+                    </ul>
+                </li>
+                <li class=" font-semibold py-2 text-gray-500">
+                    Tăng Cường Kỹ Năng Giải Quyết Vấn Đề Trong Ngữ Cảnh Thực Tế
+                    <ul class="list-disc pl-5  text-gray-500 font-normal">
+                        <li><span class="font-semibold">Phân Tích và Xử Lý Tình Huống:</span> Khi tạo game, trẻ sẽ đối mặt với nhiều thử thách cần giải quyết, chẳng hạn như cách xử lý lỗi hoặc làm cho trò chơi hoạt động mượt mà. Điều này giúp trẻ rèn luyện khả năng phân tích và giải quyết vấn đề trong ngữ cảnh thực tế.</li>
+                        <li><span class="font-semibold">Làm Việc Theo Quy Trình:</span> Việc phát triển một trò chơi từ ý tưởng đến sản phẩm hoàn thiện yêu cầu trẻ phải làm việc theo quy trình cụ thể, từ lập kế hoạch, thiết kế, lập trình đến kiểm thử và chỉnh sửa.</li>
+                    </ul>
+                </li>
+                <li class="font-semibold py-2 text-gray-500">
+                    Phát Triển Kỹ Năng Làm Việc Nhóm và Giao Tiếp
+                    <ul class="list-disc pl-5  text-gray-500 font-normal">
+                        <li><span class="font-semibold">Hợp Tác và Chia Sẻ:</span> Trong các lớp học Scratch Game, trẻ thường làm việc theo nhóm để cùng nhau phát triển các dự án game. Điều này giúp trẻ học cách làm việc nhóm, chia sẻ ý tưởng và cùng nhau giải quyết vấn đề.</li>
+                        <li><span class="font-semibold">Phát Triển Kỹ Năng Giao Tiếp:</span> Khi làm việc nhóm, trẻ cần giao tiếp để trình bày ý tưởng của mình và thảo luận về các giải pháp, giúp cải thiện kỹ năng giao tiếp và thuyết trình.
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <h3 class="text-2xl font-bold text-orange-400">Nội dung khóa học!</h3>
+        <div class="my-4">
+            <ul class=" pl-5 text-gray-500">
+                <li><span class="font-semibold">Giới Thiệu về Scratch và Lập Trình Kéo-Thả:</span> Trẻ học cách tạo và lập trình các hành động cho nhân vật trong trò chơi, bao gồm di chuyển, nhảy, thay đổi trang phục, và tương tác với các đối tượng khác.</li>
+                <li><span class="font-semibold">Tạo và Điều Khiển Nhân Vật</span>Trẻ học cách tạo và lập trình các hành động cho nhân vật trong trò chơi, bao gồm di chuyển, nhảy, thay đổi trang phục, và tương tác với các đối tượng khác.</li>
+                <li><span class="font-semibold">Thiết Kế Bối Cảnh và Môi Trường Trò Chơi:</span>Trẻ sẽ học cách tạo các bối cảnh và môi trường cho trò chơi, sử dụng hình ảnh và âm thanh để làm cho trò chơi sống động hơn.</li>
+                <li><span class="font-semibold">Xây Dựng Cốt Truyện và Cấp Độ</span>Trẻ học cách phát triển cốt truyện cho trò chơi, tạo ra các cấp độ khác nhau để tăng độ khó và thử thách cho người chơi.</li>
+                <li><span class="font-semibold">Lập Trình Logic và Điều Kiện:</span>Trẻ sẽ được học về các khái niệm lập trình như vòng lặp, điều kiện, và biến số để tạo ra các trò chơi có tính tương tác cao.</li>
+                <li><span class="font-semibold">Kiểm Thử và Chỉnh Sửa:</span>Trẻ sẽ học cách kiểm thử trò chơi của mình, phát hiện lỗi, và chỉnh sửa để đảm bảo trò chơi hoạt động mượt mà và chính xác.</li>
+                <li><span class="font-semibold">Chia Sẻ và Học Từ Cộng Đồng:</span>Trẻ được khuyến khích chia sẻ trò chơi của mình với cộng đồng Scratch, học hỏi từ các trò chơi của bạn bè và phát triển kỹ năng giao tiếp và làm việc nhóm.</li>
+            </ul>
+        </div>
+        <h3 class="text-2xl font-bold text-orange-400">Thông tin khóa học</h3>
+        <div class="my-4">
+            <!-- check - start -->
+            <div class="flex gap-2 items-center my-4">
+                <i class="fa-solid fa-child-reaching text-gray-500 text-xl ml-0.5"></i>
+
+                <span class="text-gray-500">10 - 15 tuổi</span>
+            </div>
+            <!-- check - end -->
+            <!-- check - start -->
+            <div class="flex gap-2 items-center my-4">
+                <i class="fa-regular fa-calendar-days text-gray-500 text-xl"></i>
+
+                <span class="text-gray-500">1 buổi/tuần</span>
+            </div>
+            <!-- check - end -->
+            <!-- check - start -->
+            <div class="flex gap-2 items-center my-4">
+                <i class="fa-regular fa-clock text-gray-500 text-xl"></i>
+
+                <span class="text-gray-500">2 tiếng</span>
+            </div>
+            <!-- check - end -->
+        </div> *@
     </div>
 </div>
 
@@ -215,7 +210,14 @@ else
           item.IdPricingCategoryNavigation.Id == 3 ? "border-orange-500" :
           item.IdPricingCategoryNavigation.Id == 4 ? "border-red-500" : "")">
                         <div class="mb-12">
-                            <div class="mb-2 text-center text-2xl font-bold text-gray-800">@item.IdPricingCategoryNavigation.Name</div>
+                            <div class="mb-2 text-center text-2xl font-bold capitalize
+                                @(item.IdPricingCategoryNavigation.Id == 1 ? "text-gray-500" :
+                                  item.IdPricingCategoryNavigation.Id == 2 ? "text-blue-500" :
+                                  item.IdPricingCategoryNavigation.Id == 3 ? "text-orange-500" :
+                                  item.IdPricingCategoryNavigation.Id == 4 ? "text-red-500" : "")
+                                            ">
+                                @item.IdPricingCategoryNavigation.Name
+                            </div>
 
                             <p class="mx-auto mb-8 px-8 text-center text-gray-500">@item.Subtext</p>
 
@@ -224,7 +226,11 @@ else
                                 {
                                     <!-- check - start -->
                                     <div class="flex gap-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0
+                                    @(item.IdPricingCategoryNavigation.Id == 1 ? "text-gray-500" :
+                                      item.IdPricingCategoryNavigation.Id == 2 ? "text-blue-500" :
+                                      item.IdPricingCategoryNavigation.Id == 3 ? "text-orange-500" :
+                                      item.IdPricingCategoryNavigation.Id == 4 ? "text-red-500" : "")" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                         </svg>
 
