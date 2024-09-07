@@ -1,14 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Projects\\GitLab\\RoboScratchStudio\\RoboScratchStudio\\",
+  "WorkspaceRootPath": "G:\\Projects\\RoboScratchStudio\\RoboScratchStudio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1A12D5C7-F211-4DFC-9CB3-4C86D8F16CBC}|RoboScratchStudio\\RoboScratchStudio.csproj|e:\\projects\\gitlab\\roboscratchstudio\\roboscratchstudio\\roboscratchstudio\\wwwroot\\css\\output.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{1A12D5C7-F211-4DFC-9CB3-4C86D8F16CBC}|RoboScratchStudio\\RoboScratchStudio.csproj|solutionrelative:roboscratchstudio\\wwwroot\\css\\output.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{1A12D5C7-F211-4DFC-9CB3-4C86D8F16CBC}|RoboScratchStudio\\RoboScratchStudio.csproj|g:\\projects\\roboscratchstudio\\roboscratchstudio\\roboscratchstudio\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1A12D5C7-F211-4DFC-9CB3-4C86D8F16CBC}|RoboScratchStudio\\RoboScratchStudio.csproj|solutionrelative:roboscratchstudio\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A12D5C7-F211-4DFC-9CB3-4C86D8F16CBC}|RoboScratchStudio\\RoboScratchStudio.csproj|e:\\projects\\gitlab\\roboscratchstudio\\roboscratchstudio\\roboscratchstudio\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1A12D5C7-F211-4DFC-9CB3-4C86D8F16CBC}|RoboScratchStudio\\RoboScratchStudio.csproj|solutionrelative:roboscratchstudio\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{1A12D5C7-F211-4DFC-9CB3-4C86D8F16CBC}|RoboScratchStudio\\RoboScratchStudio.csproj|g:\\projects\\roboscratchstudio\\roboscratchstudio\\roboscratchstudio\\views\\shared\\_layout_no_carousel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1A12D5C7-F211-4DFC-9CB3-4C86D8F16CBC}|RoboScratchStudio\\RoboScratchStudio.csproj|solutionrelative:roboscratchstudio\\views\\shared\\_layout_no_carousel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A12D5C7-F211-4DFC-9CB3-4C86D8F16CBC}|RoboScratchStudio\\RoboScratchStudio.csproj|g:\\projects\\roboscratchstudio\\roboscratchstudio\\roboscratchstudio\\repositories\\homerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A12D5C7-F211-4DFC-9CB3-4C86D8F16CBC}|RoboScratchStudio\\RoboScratchStudio.csproj|solutionrelative:roboscratchstudio\\repositories\\homerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A12D5C7-F211-4DFC-9CB3-4C86D8F16CBC}|RoboScratchStudio\\RoboScratchStudio.csproj|g:\\projects\\roboscratchstudio\\roboscratchstudio\\roboscratchstudio\\views\\course\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1A12D5C7-F211-4DFC-9CB3-4C86D8F16CBC}|RoboScratchStudio\\RoboScratchStudio.csproj|solutionrelative:roboscratchstudio\\views\\course\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A12D5C7-F211-4DFC-9CB3-4C86D8F16CBC}|RoboScratchStudio\\RoboScratchStudio.csproj|g:\\projects\\roboscratchstudio\\roboscratchstudio\\roboscratchstudio\\wwwroot\\css\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1A12D5C7-F211-4DFC-9CB3-4C86D8F16CBC}|RoboScratchStudio\\RoboScratchStudio.csproj|solutionrelative:roboscratchstudio\\wwwroot\\css\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +30,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1822,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "output.css",
-              "DocumentMoniker": "E:\\Projects\\GitLab\\RoboScratchStudio\\RoboScratchStudio\\RoboScratchStudio\\wwwroot\\css\\output.css",
-              "RelativeDocumentMoniker": "RoboScratchStudio\\wwwroot\\css\\output.css",
-              "ToolTip": "E:\\Projects\\GitLab\\RoboScratchStudio\\RoboScratchStudio\\RoboScratchStudio\\wwwroot\\css\\output.css",
-              "RelativeToolTip": "RoboScratchStudio\\wwwroot\\css\\output.css",
-              "ViewState": "AQIAAEkCAAAAAAAAAAAswF4CAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-08-26T14:50:28.066Z",
+              "DocumentIndex": 1,
+              "Title": "_Layout_no_carousel.cshtml",
+              "DocumentMoniker": "G:\\Projects\\RoboScratchStudio\\RoboScratchStudio\\RoboScratchStudio\\Views\\Shared\\_Layout_no_carousel.cshtml",
+              "RelativeDocumentMoniker": "RoboScratchStudio\\Views\\Shared\\_Layout_no_carousel.cshtml",
+              "ToolTip": "G:\\Projects\\RoboScratchStudio\\RoboScratchStudio\\RoboScratchStudio\\Views\\Shared\\_Layout_no_carousel.cshtml",
+              "RelativeToolTip": "RoboScratchStudio\\Views\\Shared\\_Layout_no_carousel.cshtml",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAGIAAABOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-07T11:02:46.255Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "E:\\Projects\\GitLab\\RoboScratchStudio\\RoboScratchStudio\\RoboScratchStudio\\Views\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "G:\\Projects\\RoboScratchStudio\\RoboScratchStudio\\RoboScratchStudio\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "RoboScratchStudio\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "E:\\Projects\\GitLab\\RoboScratchStudio\\RoboScratchStudio\\RoboScratchStudio\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "G:\\Projects\\RoboScratchStudio\\RoboScratchStudio\\RoboScratchStudio\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "RoboScratchStudio\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAA8AAABhAAAA",
+              "ViewState": "AQIAAEYAAAAAAAAAAAAAAGIAAABSAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-26T14:37:25.209Z",
+              "WhenOpened": "2024-09-07T11:00:43.935Z",
               "EditorCaption": ""
             },
             {
@@ -69,6 +81,43 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeRepository.cs",
+              "DocumentMoniker": "G:\\Projects\\RoboScratchStudio\\RoboScratchStudio\\RoboScratchStudio\\Repositories\\HomeRepository.cs",
+              "RelativeDocumentMoniker": "RoboScratchStudio\\Repositories\\HomeRepository.cs",
+              "ToolTip": "G:\\Projects\\RoboScratchStudio\\RoboScratchStudio\\RoboScratchStudio\\Repositories\\HomeRepository.cs",
+              "RelativeToolTip": "RoboScratchStudio\\Repositories\\HomeRepository.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAowCcAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T08:22:28.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "styles.css",
+              "DocumentMoniker": "G:\\Projects\\RoboScratchStudio\\RoboScratchStudio\\RoboScratchStudio\\wwwroot\\css\\styles.css",
+              "RelativeDocumentMoniker": "RoboScratchStudio\\wwwroot\\css\\styles.css",
+              "ToolTip": "G:\\Projects\\RoboScratchStudio\\RoboScratchStudio\\RoboScratchStudio\\wwwroot\\css\\styles.css",
+              "RelativeToolTip": "RoboScratchStudio\\wwwroot\\css\\styles.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-09-04T13:52:58.643Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "G:\\Projects\\RoboScratchStudio\\RoboScratchStudio\\RoboScratchStudio\\Views\\Course\\Detail.cshtml",
+              "RelativeDocumentMoniker": "RoboScratchStudio\\Views\\Course\\Detail.cshtml",
+              "ToolTip": "G:\\Projects\\RoboScratchStudio\\RoboScratchStudio\\RoboScratchStudio\\Views\\Course\\Detail.cshtml",
+              "RelativeToolTip": "RoboScratchStudio\\Views\\Course\\Detail.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAABSAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-04T05:48:16.527Z"
             }
           ]
         }
