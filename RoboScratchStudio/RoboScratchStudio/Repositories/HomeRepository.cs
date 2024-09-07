@@ -37,7 +37,9 @@ namespace RoboScratchStudio.Repositories
 
         public List<Course> takeCourses(int quantity)
         {
-            return _ctx.Courses.Include(c => c.CourseTitleImages).Take(quantity).ToList();
+            return _ctx.Courses.Where(c => c.IsShow == true)
+                .Include(c => c.CourseTitleImages)
+                .Take(quantity).ToList();
         }
     }
 }

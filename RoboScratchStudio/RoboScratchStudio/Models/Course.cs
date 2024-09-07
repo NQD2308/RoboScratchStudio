@@ -23,6 +23,8 @@ public partial class Course
 
     public int? IdCourseCategory { get; set; }
 
+    public bool? IsShow { get; set; }
+
     public virtual ICollection<CourseTitleImage> CourseTitleImages { get; set; } = new List<CourseTitleImage>();
 
     public virtual ICollection<Gallery> Galleries { get; set; } = new List<Gallery>();

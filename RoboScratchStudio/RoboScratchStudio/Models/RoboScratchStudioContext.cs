@@ -61,6 +61,7 @@ public partial class RoboScratchStudioContext : DbContext
                 .HasMaxLength(50)
                 .HasColumnName("duration_in_week");
             entity.Property(e => e.IdCourseCategory).HasColumnName("id_course_category");
+            entity.Property(e => e.IsShow).HasColumnName("is_show");
             entity.Property(e => e.Name)
                 .HasMaxLength(50)
                 .HasColumnName("name");
