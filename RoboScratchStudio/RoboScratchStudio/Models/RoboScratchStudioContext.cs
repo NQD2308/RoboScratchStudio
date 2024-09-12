@@ -30,8 +30,9 @@ public partial class RoboScratchStudioContext : DbContext
     public virtual DbSet<PricingCategory> PricingCategories { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=ADMIN-GK4O6HCO7\\SQLEXPRESS;uid=sa;password=1;database=RoboScratchStudio;Encrypt=true;TrustServerCertificate=true");
+        => optionsBuilder.UseSqlServer(
+            /*"Server=ADMIN-GK4O6HCO7\\SQLEXPRESS;uid=sa;password=1;database=RoboScratchStudio;Encrypt=true;TrustServerCertificate=true"*/
+            "Server=sql.bsite.net\\MSSQL2016;uid=roboscratchstudio_;password=123456;database=roboscratchstudio_;Encrypt=true;TrustServerCertificate=true");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
